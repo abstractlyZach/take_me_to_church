@@ -15,5 +15,7 @@ class MessageHandler:
 	def get_response(self):
 		format_string = ("Hello {}. You have sent {} messages this session. "
 			'You sent "{}"')
-		# return format_string.format(self._name, self._session_counter, self._message)
-		return "deploy.sh works!!!"
+		# temp
+		format_string += "deploy.sh works!!!"
+		return format_string.format(self._name, self._session_counter, self._message)
+		 

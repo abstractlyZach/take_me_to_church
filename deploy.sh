@@ -18,6 +18,12 @@ echo -e "Enter commit message: "
 # store commit message in the $message variable
 read message
 
+# commit to github
+# https://github.com/exzacktlee/take_me_to_church
+git add .
+git commit -m "$message"
+git push -u origin master
+
 # copy the contents of this folder into the other folder, except for the gitignore
 cp -r ./* ../tmtc_staging/
 
