@@ -91,7 +91,9 @@ around 11:45AM (normal time)
 
 ###First Interaction
 ```
-> Hello! I'm the GLMC ride coordinator bot. I'll be contacting you about rides from now on! I'm just a bot, so if you have any big questions, contact Jessica at (XXX) XXX-XXX. Will you be ready to leave for GLMC college group at 7:15PM on Friday?
+> Hello! I'm the GLMC ride coordinator bot. I'll be contacting you about rides from now on! 
+   I'm just a bot, so if you have any big questions, contact Jessica at (XXX) XXX-XXX. Will you be 
+   ready to leave for GLMC college group at 7:15PM on Friday?
 
   < Yes
 
@@ -107,7 +109,9 @@ around 11:45AM (normal time)
 
 some time later...
 
-> Your ride on Friday will be with Thomas. He's driving a silver Honda Civic with license plate "1ABC234". He'll pick you up at "your workplace" around 7:15PM. If you need to contact him, his number is (XXX) XXX-XXXX.
+> Your ride on Friday will be with Thomas. He's driving a silver Honda Civic with license plate "1ABC234". 
+   He'll pick you up at "your workplace" around 7:15PM. If you need to contact him, his 
+   number is (XXX) XXX-XXXX.
 ```
 
 
