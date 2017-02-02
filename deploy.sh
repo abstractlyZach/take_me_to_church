@@ -1,6 +1,6 @@
 #!/bin/bash
 # deploy.sh
-# deploys the current code to heroku
+# deploys the current code to heroku and uploads the code to github.
 # IMPORTANT: make sure to run this code from the source code directory
 
 # Used this as a resource:
@@ -18,11 +18,15 @@ echo -e "Enter commit message: "
 # store commit message in the $message variable
 read message
 
+# ===============================================================================
+# IMPORTANT. change or comment this section out if you don't want to commit
+#      your code to whatever 'master' is set to for git!
 # commit to github
 # https://github.com/exzacktlee/take_me_to_church
 git add .
 git commit -m "$message"
 git push -u origin master
+# ===============================================================================
 
 # copy the contents of this folder into the other folder, except for the gitignore
 cp -r ./* ../tmtc_staging/
