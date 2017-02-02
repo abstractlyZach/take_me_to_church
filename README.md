@@ -36,76 +36,79 @@ The system will automatically send text messages to everyone to gather ride info
 
 ##Sample Interactions
 ###Weekly Message
-__Hi! Are you coming to church this week?__
+```
+> Hi! Are you coming to church this week?
 
-Yes
+  < Yes
 
-__Will you be able to leave at the usual time (11:45AM)?__
+> Will you be able to leave at the usual time (11:45AM)?
 
-Yes
+  < Yes
 
-__Pick you up at your usual spot? (Parking lot near dining commons)__
+> Pick you up at your usual spot? (Parking lot near dining commons)
 
-No
+  < No
 
-__Where do you want to be picked up?__
+> Where do you want to be picked up?
 
-Flagpoles
+  < Flagpoles
 
-__Cool. I'll text you back when rides are all set up__
+> Cool. I'll text you back when rides are all set up
 
-_some time later..._
+some time later...
 
-__You'll be going to church with Bob! His phone number is (123) 456-7890 and he'll pick you up around 11:45AM (normal time) on Sunday__
+> You'll be going to church with Bob! His phone number is (123) 456-7890 and he'll pick you up 
+      around 11:45AM (normal time) on Sunday
+```
 
 ###Driver Message
-__Hi! Are you coming to church this week?__
+```
+> Hi! Are you coming to church this week?
 
-Yes
+  < Yes
 
-__Are you down to drive people?__
+> Are you down to drive people?
 
-Yes
+  < Yes
 
-__Great! Will you be leaving at the usual time (11:45AM)?__
+> Great! Will you be leaving at the usual time (11:45AM)?
 
-Yes
+  < Yes
 
-__Cool. I'll text you back when rides are all set up__
+> Cool. I'll text you back when rides are all set up
 
-_some time later..._
+some time later...
 
-__Can you please pick up:__
-
-__Joe: Mesa Court Lot 15 
-   (213) 911-9111__
+> Can you please pick up:
+ Joe: Mesa Court Lot 15 
+   (213) 911-9111
    
-__Sally: 1 Campus Drive, Irvine CA 92617
-   (XXX) XXX-XXXX__
- 
-__...__
-
-__around 11:45AM (normal time)__
+ Sally: 1 Campus Drive, Irvine CA 92617
+   (XXX) XXX-XXXX
+...
+around 11:45AM (normal time)
+```
 
 ###First Interaction
-__Hello! I'm the GLMC ride coordinator bot. I'll be contacting you about rides from now on! I'm just a bot, so if you have any big questions, contact Jessica at (XXX) XXX-XXX. Will you be ready to leave for GLMC college group at 7:15PM on Friday?__
+```
+> Hello! I'm the GLMC ride coordinator bot. I'll be contacting you about rides from now on! I'm just a bot, so if you have any big questions, contact Jessica at (XXX) XXX-XXX. Will you be ready to leave for GLMC college group at 7:15PM on Friday?
 
-Yes
+  < Yes
 
-__Where can you be picked up?__
+> Where can you be picked up?
 
-From my workplace, 1234 Example Rd., Los Angeles CA
+  < From my workplace, 1234 Example Rd., Los Angeles CA
 
-__Awesome. Did someone specific invite you to GLMC? I'll try to place you in his/her car__
+> Awesome. Did someone specific invite you to GLMC? I'll try to place you in his/her car
 
-Anna
+  < Anna
 
-__Great! I'll try to put you in Anna's car. I'll contact you again soon when rides are set up__
+> Great! I'll try to put you in Anna's car. I'll contact you again soon when rides are set up
 
-_some time later..._
+some time later...
 
-__Your ride on Friday will be with Thomas. He's driving a silver Honda Civic with license plate "1ABC234". He'll pick you up at "your workplace" around 7:15PM. If you need to contact him, his number is (XXX) XXX-XXXX.__
-
+> Your ride on Friday will be with Thomas. He's driving a silver Honda Civic with license plate "1ABC234". He'll pick you up at "your workplace" around 7:15PM. If you need to contact him, his number is (XXX) XXX-XXXX.
+```
 
 
 
