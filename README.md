@@ -1,4 +1,4 @@
-#Project Take Me To Church
+#Project: Take Me To Church
 Ride coordinators have a lot to think about:
 * Am I aware of every person who wants a ride to church this week? 
 * Did I coordinate details with drivers? 
