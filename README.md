@@ -35,6 +35,74 @@ Technologies:
 
 ##Sample Interactions
 ###Weekly Message
+__Hi! Are you coming to church this week?__
+
+Yes
+
+__Will you be able to leave at the usual time (11:45AM)?__
+
+Yes
+
+__Pick you up at your usual spot? (Parking lot near dining commons)__
+
+No
+
+__Where do you want to be picked up?__
+Flagpoles
+
+__Cool. I'll text you back when rides are all set up__
+
+_some time later..._
+
+__You'll be going to church with Bob! His phone number is (123) 456-7890 and he'll pick you up around 11:45AM (normal time) on Sunday__
+
+###Driver Message
+__Hi! Are you coming to church this week?__
+
+Yes
+
+__Are you down to drive people?__
+
+Yes
+
+__Great! Will you be leaving at the usual time (11:45AM)?__
+
+Yes
+
+__Cool. I'll text you back when rides are all set up__
+
+_some time later..._
+
+__Can you please pick up:__
+
+__Joe: Mesa Court Lot 15 
+   (213) 911-9111__
+   
+__Sally: 1 Campus Drive, Irvine CA 92617
+   (XXX) XXX-XXXX__
+ 
+__...__
+
+__around 11:45AM (normal time)__
+
+###First Interaction
+__Hello! I'm the GLMC ride coordinator bot. I'll be contacting you about rides from now on! I'm just a bot, so if you have any big questions, contact Jessica at (XXX) XXX-XXX. Will you be ready to leave for GLMC college group at 7:15PM on Friday?__
+
+Yes
+
+__Where can you be picked up?__
+
+From my workplace, 1234 Example Rd., Los Angeles CA
+
+__Awesome. Did someone specific invite you to GLMC? I'll try to place you in his/her car__
+
+Anna
+
+__Great! I'll try to put you in Anna's car. I'll contact you again soon when rides are set up__
+
+_some time later..._
+
+__Your ride on Friday will be with Thomas. He's driving a silver Honda Civic with license plate "1ABC234". He'll pick you up at "your workplace" around 7:15PM. If you need to contact him, his number is (XXX) XXX-XXXX.__
 
 
 
