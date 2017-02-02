@@ -48,6 +48,7 @@ __Pick you up at your usual spot? (Parking lot near dining commons)__
 No
 
 __Where do you want to be picked up?__
+
 Flagpoles
 
 __Cool. I'll text you back when rides are all set up__
