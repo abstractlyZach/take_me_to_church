@@ -114,7 +114,7 @@ some time later...
    number is (XXX) XXX-XXXX.
 ```
 
-###How to install on your own machine
+##How to install on your own machine
 
 
 Make sure to install Twilio on your machine with
