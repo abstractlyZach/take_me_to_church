@@ -1,6 +1,6 @@
 # handle_message.py
 import nltk
-import gspreadtest
+import get_info
 
 class MessageHandler:
 	def __init__(self, message, session_counter, phone_number):
@@ -15,11 +15,11 @@ class MessageHandler:
 		self._phone_number = phone_number
 
 	def get_response(self):
-		if self._phone_number == gspreadtest.get_zach_number():
-			name = 'ZACH!!!'
+		sender = get_info.get_person_by_number(self._phone_number)
+		if sender == None:
+			name = "stranger"
 		else:
-			name = 'stranger'
-
+			name = sender.get_name()
 		format_string = ("Hello {}. You have sent {} messages this session. "
 			'You sent "{}"')
 		return format_string.format(name, self._session_counter, self._message)
