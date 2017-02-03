@@ -18,5 +18,5 @@ class MessageHandler:
 			'You sent "{}"')
 		# temp
 		format_string += "deploy.sh works!!!"
-		return format_string.format(self._name, self._session_counter, self._message)
+		return format_string.format(self._phone_number, self._session_counter, self._message)
 		 
