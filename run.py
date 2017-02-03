@@ -28,15 +28,11 @@ def respond():
 
     # store the number that sent the message
     from_number = request.values.get('From')
-    if from_number in callers:
-        name = callers[from_number]
-    else:
-        name = "idk who you are"
 
     # Get the received message
     message = request.form['Body']
     
-    message_handler = handle_message.MessageHandler(message, session_counter, name)
+    message_handler = handle_message.MessageHandler(message, session_counter, from_number)
     response_str = message_handler.get_response()
 
     resp = twilio.twiml.Response()
