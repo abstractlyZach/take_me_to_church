@@ -37,8 +37,9 @@ def get_person_by_number(phone_number):
 	for row, value in enumerate(worksheet.col_values(phone_number_column), 2):
 		if value == phone_number:
 			name = worksheet.cell(row, name_column).value
-			id_number = worksheet.cell(row, id_column)
-			pickup_location = worksheet.cell(row, pickup_column)
+			id_number = worksheet.cell(row, id_column).value
+			pickup_location = worksheet.cell(row, pickup_column).value
+			print(name, id_number, pickup_location, phone_number)
 			return person.Person(name, id_number, phone_number, pickup_location)
 	return None
 
