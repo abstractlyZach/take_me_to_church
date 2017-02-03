@@ -12,17 +12,14 @@ SECRET_KEY = credentials.FLASK_SECRET_KEY
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# Try adding your own number to this list!
-callers = {
-    "+16263778839": "Curious George",
-    "+14158675310": "Boots",
-    "+14158675311": "Virgil",
-}
+# callers = {
+#     "+16263778839": "Curious George",
+#     "+14158675310": "Boots",
+#     "+14158675311": "Virgil",
+# }
 
 @app.route("/", methods=['GET', 'POST'])
-def hello_monkey():
-    """Respond with the number of text messages sent between two parties."""
-
+def respond():
     session_counter = session.get('counter', 0)
     # increment the counter
     session_counter += 1
@@ -34,7 +31,7 @@ def hello_monkey():
     if from_number in callers:
         name = callers[from_number]
     else:
-        name = "Monkey"
+        name = "idk who you are"
 
     # Get the received message
     message = request.form['Body']
