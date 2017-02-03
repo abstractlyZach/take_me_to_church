@@ -7,7 +7,16 @@ twilio_client = TwilioRestClient(accountSID, auth_token)
 
 my_twilio_number = '+16264363230'
 my_cell_number = '+16263778839'
+jonathan = '+18184703242'
+stella = '+12133935454'
 
-message = twilio_client.messages.create(body='Mr. Watson - Come here - I want to see you.', 
-			from_=my_twilio_number, to=my_cell_number)
+# message = twilio_client.messages.create(body='Mr. Watson - Come here - I want to see you.', 
+# 			from_=my_twilio_number, to=my_cell_number)
 
+body_str = 'TESTING 123 TESTING 123'
+message = twilio_client.messages.create(body=body_str,
+			from_=my_twilio_number, to=stella)
+
+body_str = "respond to me!"
+message = twilio_client.messages.create(body=body_str,
+			from_=my_twilio_number, to=stella)

@@ -12,12 +12,6 @@ SECRET_KEY = credentials.FLASK_SECRET_KEY
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# callers = {
-#     "+16263778839": "Curious George",
-#     "+14158675310": "Boots",
-#     "+14158675311": "Virgil",
-# }
-
 @app.route("/", methods=['GET', 'POST'])
 def respond():
     session_counter = session.get('counter', 0)

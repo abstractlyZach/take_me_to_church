@@ -15,6 +15,9 @@ class MessageHandler:
 		self._phone_number = phone_number
 
 	def get_response(self):
+		'''Returns a the appropriate response to a text message. Uses its object attributes
+		to craft the response. Returns a string.
+		'''
 		if self._message == 'password':
 			return "Welcome to the club"
 		else: # didn't send the secret password
