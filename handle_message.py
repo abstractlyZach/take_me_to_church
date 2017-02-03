@@ -1,4 +1,5 @@
 # handle_message.py
+import nltk
 
 class MessageHandler:
 	def __init__(self, message, session_counter, name):
