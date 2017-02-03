@@ -14,9 +14,8 @@ class MessageHandler:
 		self._phone_number = phone_number
 
 	def get_response(self):
+		return "the walrus bacons at midnight"
 		format_string = ("Hello {}. You have sent {} messages this session. "
 			'You sent "{}"')
-		# temp
-		format_string += "deploy.sh works!!!"
 		return format_string.format(self._phone_number, self._session_counter, self._message)
 		 
