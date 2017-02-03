@@ -39,7 +39,7 @@ def get_person_by_number(phone_number):
 			name = worksheet.cell(row, name_column).value
 			id_number = worksheet.cell(row, id_column)
 			pickup_location = worksheet.cell(row, pickup_column)
-			return Person(name, id_number, phone_number, pickup_location)
+			return person.Person(name, id_number, phone_number, pickup_location)
 	return None
 
 
