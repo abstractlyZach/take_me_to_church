@@ -34,7 +34,7 @@ def get_person_by_number(phone_number):
 	name_column = get_column_index("name", worksheet)
 	pickup_column = get_column_index("default pickup location", worksheet)
 
-	for row, value in enumerate(worksheet.col_values(phone_number_column), 2):
+	for row, value in enumerate(worksheet.col_values(phone_number_column), 1):
 		if value == phone_number:
 			name = worksheet.cell(row, name_column).value
 			id_number = worksheet.cell(row, id_column).value
