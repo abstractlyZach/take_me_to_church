@@ -11,6 +11,9 @@ Ride coordinators have a lot to think about.
 This project aims to alleviate those problems and take care of the tedious work so that rides coordinators can focus on what they're good at: coordinating.
 
 ##Implementation
+
+The system will automatically send text messages to everyone to gather ride information. This ride information will be maintained in a Google spreadsheet so that the coordinator can easily look at the situation. If the coordinator needs to make changes, he just needs to make edits to the spreadsheet and then send a text to the system, which will send out texts to everyone with the updated information.
+
 Technologies:
 * Google spreadsheets 
   * http://sheets.google.com
@@ -31,8 +34,6 @@ Technologies:
 * flask
   * http://flask.pocoo.org/
   * python server
-
-The system will automatically send text messages to everyone to gather ride information. This ride information will be maintained in a Google spreadsheet so that the coordinator can easily look at the situation. If the coordinator needs to make changes, he just needs to make edits to the spreadsheet and then send a text to the system, which will send out texts to everyone with the updated information.
 
 ##Sample Interactions
 ###Weekly Message
