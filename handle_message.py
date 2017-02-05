@@ -28,7 +28,8 @@ class MessageHandler:
 				name = sender.get_name()
 			format_string = ("Hello {}. You have sent {} messages this session. "
 				'You sent "{}". ')
-			if sender.get_pickup_location() != None:
-				format_string += "I'll pick you up at {}!".format(sender.get_pickup_location())
+			if sender != None:
+				if sender.get_pickup_location() != None:
+					format_string += "I'll pick you up at {}!".format(sender.get_pickup_location())
 			return format_string.format(name, self._session_counter, self._message)
 		 
