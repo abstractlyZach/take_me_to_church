@@ -24,7 +24,7 @@ SPREADSHEET = gc.open('GLMC Rides')
 
 
 
-def get_person_by_number(phone_number):
+def get_person_by_phone(phone_number):
 	'''Given a phone number, returns the corresponding Person object. 
 	None if they don't exist'''
 	worksheet = SPREADSHEET.worksheet("People")
@@ -39,7 +39,24 @@ def get_person_by_number(phone_number):
 			name = worksheet.cell(row, name_column).value
 			id_number = worksheet.cell(row, id_column).value
 			pickup_location = worksheet.cell(row, pickup_column).value
-			print(name, id_number, pickup_location, phone_number)
+			return person.Person(name, id_number, phone_number, pickup_location)
+	return None
+
+def get_person_by_id(id_number):
+	'''Given an id, returns the corresponding Person object. 
+	None if they don't exist'''
+	worksheet = SPREADSHEET.worksheet("People")
+
+	phone_number_column = get_column_index("phone number", worksheet)
+	id_column = get_column_index("id", worksheet)
+	name_column = get_column_index("name", worksheet)
+	pickup_column = get_column_index("default pickup location", worksheet)
+
+	for row, value in enumerate(worksheet.col_values(id_column), 1):
+		if value == str(id_number):
+			name = worksheet.cell(row, name_column).value
+			phone_number = worksheet.cell(row, phone_number_column).value
+			pickup_location = worksheet.cell(row, pickup_column).value
 			return person.Person(name, id_number, phone_number, pickup_location)
 	return None
 

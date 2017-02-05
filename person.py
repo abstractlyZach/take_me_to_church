@@ -8,7 +8,8 @@ class Person:
 			can be added later.'''
 		self._name = name
 		self._id = id_number
-
+		self._phone = phone
+		self._pickup_location = pickup_location
 
 	def get_name(self):
 		return self._name
@@ -30,4 +31,12 @@ class Person:
 
 	def get_pickup_location(self):
 		return self._pickup_location
+
+	def __str__(self):
+		indent = '    '
+		to_return = '{}:\n'.format(self.get_name())
+		to_return += '{}{:16}: {}\n'.format(indent, 'id', self.get_id())	
+		to_return += '{}{:16}: {}\n'.format(indent, 'phone', self.get_phone())
+		to_return += '{}{:16}: {}\n'.format(indent, 'pickup location', self.get_pickup_location())
+		return to_return
 
