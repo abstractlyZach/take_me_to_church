@@ -12,7 +12,7 @@ This project aims to alleviate those problems and take care of the tedious work 
 
 ##Implementation
 
-The system will automatically send text messages to everyone to gather ride information. This ride information will be maintained in a Google spreadsheet so that the coordinator can easily look at the situation. If the coordinator needs to make changes, he just needs to make edits to the spreadsheet and then send a text to the system, which will send out texts to everyone with the updated information.
+The system will automatically send text messages to everyone to gather ride information. This ride information will be maintained in a Google spreadsheet so that the coordinator can easily look at the situation. If the coordinator needs to make changes, he just needs to make edits to the spreadsheet and then sends a text to the system, which will send out texts to everyone with the updated information.
 
 Technologies:
 * Google spreadsheets 
