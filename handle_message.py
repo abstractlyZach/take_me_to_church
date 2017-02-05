@@ -21,12 +21,14 @@ class MessageHandler:
 		if self._message == 'password':
 			return "Welcome to the club"
 		else: # didn't send the secret password
-			sender = get_info.get_person_by_number(self._phone_number)
+			sender = get_info.get_person_by_phone(self._phone_number)
 			if sender == None:
 				name = "stranger"
 			else:
 				name = sender.get_name()
 			format_string = ("Hello {}. You have sent {} messages this session. "
-				'You sent "{}"')
+				'You sent "{}". ')
+			if sender.get_pickup_location() != None:
+				format_string += "I'll pick you up at {}!".format(sender.get_pickup_location())
 			return format_string.format(name, self._session_counter, self._message)
 		 
