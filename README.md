@@ -19,7 +19,7 @@ Technologies:
   * http://sheets.google.com
   * stores information for riders and drivers
   * allows coordinator to get an overview of the rides situation
-* Python
+* Python 3
   * http://python.org
   * primary programming language for this project
 * gspread 
