@@ -1,9 +1,9 @@
 # get_info.py
 # retrieves information from the google spreadsheet
 
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 import person
+import gspread_connection
+import phonenumbers
 
 # 1. go to https://console.developers.google.com/iam-admin/projects
 # 2. enable drive API
@@ -13,20 +13,15 @@ import person
 # 5. create a google spreadsheet on your own account and "share" it with 
 #        the email included in the json file
 
+SPREADSHEET = gspread_connection.connect()
 
-# Log into the google account and returns a spreadsheet object that allows
-#     you to carry out operations on it
-scope = ['https://spreadsheets.google.com/feeds']
-credentials = ServiceAccountCredentials.from_json_keyfile_name( \
-	'GLMC Irvine Rides-ae48e51e1772.json', scope)
-gc = gspread.authorize(credentials)
-SPREADSHEET = gc.open('GLMC Rides')
-
-
-
-def get_person_by_phone(phone_number):
+def get_person_by_phone(phone_number, region='US'):
 	'''Given a phone number, returns the corresponding Person object. 
 	None if they don't exist'''
+	# Converts phonen_number into phonenumbers.PhoneNumber object if they aren't already
+	if not isinstance(phone_number, phonenumbers.PhoneNumber):
+		phone_number = phonenumbers.parse(phone_number, region)
+
 	worksheet = SPREADSHEET.worksheet("People")
 
 	phone_number_column = get_column_index("phone number", worksheet)
@@ -34,8 +29,9 @@ def get_person_by_phone(phone_number):
 	name_column = get_column_index("name", worksheet)
 	pickup_column = get_column_index("default pickup location", worksheet)
 
-	for row, value in enumerate(worksheet.col_values(phone_number_column), 1):
-		if value == phone_number:
+	# skip first row because it's the column header
+	for row, value in enumerate(worksheet.col_values(phone_number_column)[1:], 2):
+		if phonenumbers.parse(value, region) == phone_number:
 			name = worksheet.cell(row, name_column).value
 			id_number = worksheet.cell(row, id_column).value
 			pickup_location = worksheet.cell(row, pickup_column).value
@@ -60,6 +56,16 @@ def get_person_by_id(id_number):
 			return person.Person(name, id_number, phone_number, pickup_location)
 	return None
 
+def next_id():
+	ids = list()
+	worksheet = SPREADSHEET.worksheet("People")
+	id_column_index = get_column_index("id", worksheet)
+	for id_number in worksheet.col_values(id_column_index)[1:]:
+		try:
+			ids.append(int(id_number))
+		except ValueError: # ignore the value if it can't be converted to an int.
+			pass
+	return max(ids) + 1
 
 def get_column_index(column_name, worksheet):
 	'''Given a column name, returns the index of that column in the spreadsheet.
@@ -71,6 +77,14 @@ def get_column_index(column_name, worksheet):
 			return index
 	return None
 
+def get_empty_row(worksheet):
+	'''Searches the first column of the spreadsheet and returns the first row 
+	that is empty in that column'''
+	for row, value in enumerate(worksheet.col_values(1), 1):
+		if value == '':
+			return row
+	# this should never happen. I'm pretty sure google spreadsheets have no row limit
+	return -1
 
 def might_be_useful_later():
 	# map column names to column indices
