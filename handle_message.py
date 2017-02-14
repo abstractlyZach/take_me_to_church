@@ -19,9 +19,9 @@ class MessageHandler:
 		'''Returns a the appropriate response to a text message. Uses its object attributes
 		to craft the response. Returns a string.
 		'''
-		if self._message == 'password':
+		if self._message.lower() == 'password':
 			return "Welcome to the club"
-		elif self._message == 'chuck':
+		elif self._message.lower() == 'chuck':
 			return jokes.get_chuck_norris_joke()
 		else: # didn't send the secret password
 			sender = get_info.get_person_by_phone(self._phone_number)
