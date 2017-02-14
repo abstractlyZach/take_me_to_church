@@ -26,7 +26,7 @@ if __name__ == '__main__':
 	print()
 	while True:
 		action = input("New Person... (Enter to continue, q to quit)")
-		if action.lower() != 'q':
+		if action.lower() == 'q':
 			break
 		name = input("Name: ")
 		phone = input("Phone number: ")
