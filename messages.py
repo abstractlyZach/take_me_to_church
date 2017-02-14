@@ -1,4 +1,4 @@
-# message.py
+# messages.py
 
 # this module handles sending messages to people
 

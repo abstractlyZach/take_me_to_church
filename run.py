@@ -5,7 +5,7 @@ from flask import Flask, request, redirect, session
 import twilio.twiml
 import handle_message
 import credentials
-import message
+import messages
 
 
 # The session object makes use of a secret key.
@@ -31,7 +31,7 @@ def respond():
     response_str = message_handler.get_response()
 
     resp = twilio.twiml.Response()
-    resp.sms(message.HEADER_SEPARATOR + response_str) # separates the trial header from the message
+    resp.sms(messages.HEADER_SEPARATOR + response_str) # separates the trial header from the message
 
     return str(resp)
 
