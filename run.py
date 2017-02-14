@@ -30,7 +30,7 @@ def respond():
     response_str = message_handler.get_response()
 
     resp = twilio.twiml.Response()
-    resp.sms('\n\n' + response_str) # separates the trial header from the message
+    resp.sms('====\n' + response_str) # separates the trial header from the message
 
     return str(resp)
 
