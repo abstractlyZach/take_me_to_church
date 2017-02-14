@@ -57,6 +57,7 @@ def get_person_by_id(id_number):
 	return None
 
 def next_id():
+	'returns the id of the next Person to create'
 	ids = list()
 	worksheet = SPREADSHEET.worksheet("People")
 	id_column_index = get_column_index("id", worksheet)
