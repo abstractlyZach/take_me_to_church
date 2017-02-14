@@ -21,7 +21,7 @@ class MessageHandler:
 		'''
 		if self._message == 'password':
 			return "Welcome to the club"
-		elif self._message = 'chuck':
+		elif self._message == 'chuck':
 			return jokes.get_chuck_norris_joke()
 		else: # didn't send the secret password
 			sender = get_info.get_person_by_phone(self._phone_number)
