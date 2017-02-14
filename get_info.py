@@ -23,7 +23,6 @@ def get_person_by_phone(phone_number, region='US'):
 		phone_number = phonenumbers.parse(phone_number, region)
 
 	worksheet = SPREADSHEET.worksheet("People")
-
 	phone_number_column = get_column_index("phone number", worksheet)
 	id_column = get_column_index("id", worksheet)
 	name_column = get_column_index("name", worksheet)
