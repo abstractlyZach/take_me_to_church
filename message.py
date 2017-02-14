@@ -11,6 +11,8 @@ accountSID = credentials.TWILIO_ACCOUNT_SID
 auth_token = credentials.TWILIO_AUTH_TOKEN
 
 MY_PHONE = get_info.get_person_by_id(0).get_international_phone()
+HEADER_SEPARATOR = '- -\n\n' 
+# added dashes because twilio strips leading whitespace, so the newlines would be useless
 
 
 def send_message(target, message):
@@ -19,5 +21,6 @@ def send_message(target, message):
 		target_number = target.get_international_phone()
 	else:
 		target_number = target
+	message = HEADER_SEPARATOR + message # separate the trial header from the message
 	return twilio_client.messages.create(body=message,
 			from_=MY_PHONE, to=target_number)
