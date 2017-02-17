@@ -44,7 +44,7 @@ class MessageHandler:
 			else:
 				if check_rides.person_field_missing(DATE, person.get_name(), 'driver/rider'):
 					check_rides.set_as_driver(DATE, person.get_name())
-					return "Are you down to leave at the usual time ({})? If not, when do you want to leave?".format(DEFAULT_DEPARTURE_TIME)
+					return "TEST"
 				elif check_rides.person_field_missing(DATE, person.get_name(), 'departure time'):
 					check_rides.set_default_departure_time(DATE, person.get_name())
 					return "OK! you'll be leaving at the default time."
