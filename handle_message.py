@@ -1,7 +1,12 @@
 # handle_message.py
-import nltk
+
+# import nltk
+from nltk.tokenize import word_tokenize
 import get_info
 import jokes
+import check_rides
+
+DEFAULT_DEPARTURE_TIME = "7:00PM"
 
 class MessageHandler:
 	def __init__(self, message, session_counter, phone_number):
@@ -19,10 +24,20 @@ class MessageHandler:
 		'''Returns a the appropriate response to a text message. Uses its object attributes
 		to craft the response. Returns a string.
 		'''
-		if self._message.lower() == 'password':
+		tokens = word_tokenize(self._message)
+		tokens = [token.lower() for token in tokens]
+		if self._message.strip().lower() == 'password':
 			return "Welcome to the club"
-		elif self._message.lower() == 'chuck':
+		elif self._message.strip().lower() == 'chuck':
 			return jokes.get_chuck_norris_joke()
+		elif tokens[0] == "yes":
+			person = get_info.get_person_by_phone(self._phone_number)
+			if not check_rides.coming_to_church('2017-02-17', person.get_name()):
+				check_rides.create_person(person.get_name())
+			else:
+				print("duplicate response!")
+		elif tokens[0] == "no":
+			pass
 		else: # didn't send the secret password
 			sender = get_info.get_person_by_phone(self._phone_number)
 			if sender == None:
@@ -31,8 +46,8 @@ class MessageHandler:
 				name = sender.get_name()
 			format_string = ("Hello {}. You have sent {} messages this session. "
 				'You sent "{}". ')
-			if sender != None:
-				if sender.get_pickup_location() != None:
-					format_string += "I'll pick you up at {}!".format(sender.get_pickup_location())
+			# if sender != None:
+			# 	if sender.get_pickup_location() != None:
+			# 		format_string += "I'll pick you up at {}!".format(sender.get_pickup_location())
 			return format_string.format(name, self._session_counter, self._message)
 		 
