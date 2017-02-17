@@ -65,7 +65,7 @@ class MessageHandler:
 		else: # didn't send the secret password
 			coming = check_rides.coming_to_church(DATE, person.get_name())
 			if coming:
-				got_driver_rider = check_rides.person_field_missing(DATE, person.get_name(), 'driver/rider')
+				got_driver_rider = not check_rides.person_field_missing(DATE, person.get_name(), 'driver/rider')
 			if coming and got_driver_rider:
 				check_rides.set_departure_time(DATE, person.get_name(), self._message)
 				return "Got it! Message me a new time if you need to change your time"
