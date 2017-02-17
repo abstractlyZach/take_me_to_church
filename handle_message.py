@@ -8,6 +8,8 @@ import check_rides
 
 DEFAULT_DEPARTURE_TIME = "7:00PM"
 
+nltk.download('punkt')
+
 class MessageHandler:
 	def __init__(self, message, session_counter, phone_number):
 		# The message the server just received
