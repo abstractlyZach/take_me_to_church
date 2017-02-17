@@ -52,4 +52,5 @@ class MessageHandler:
 			# 	if sender.get_pickup_location() != None:
 			# 		format_string += "I'll pick you up at {}!".format(sender.get_pickup_location())
 			return format_string.format(name, self._session_counter, self._message)
+		return "" # temporary placeholder before I add in more logic. makes sure I always return a string
 		 
