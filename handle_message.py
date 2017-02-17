@@ -1,6 +1,6 @@
 # handle_message.py
 
-# import nltk
+import nltk
 from nltk.tokenize import word_tokenize
 import get_info
 import jokes
