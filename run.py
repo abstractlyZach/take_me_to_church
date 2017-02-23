@@ -29,6 +29,7 @@ def respond():
     
     message_handler = handle_message.MessageHandler(message, session_counter, from_number)
     response_str = message_handler.get_response()
+    print(response_str)
 
     resp = twilio.twiml.Response()
     resp.sms(messages.HEADER_SEPARATOR + response_str) # separates the trial header from the message

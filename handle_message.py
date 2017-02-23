@@ -43,6 +43,7 @@ class MessageHandler:
 				return "Got it! Are you down to drive people? (yes/no)"
 			else:
 				if check_rides.person_field_missing(DATE, person.get_name(), 'driver/rider'):
+					print("setting person as a driver!!!")
 					check_rides.set_as_driver(DATE, person.get_name())
 					return "TEST"
 				elif check_rides.person_field_missing(DATE, person.get_name(), 'departure time'):
