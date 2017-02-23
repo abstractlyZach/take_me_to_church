@@ -45,6 +45,7 @@ class MessageHandler:
 				if check_rides.person_field_missing(DATE, person.get_name(), 'driver/rider'):
 					print("setting person as a driver!!!")
 					check_rides.set_as_driver(DATE, person.get_name())
+					print("finished setting person as a driver!")
 					return "TEST"
 				elif check_rides.person_field_missing(DATE, person.get_name(), 'departure time'):
 					check_rides.set_default_departure_time(DATE, person.get_name())
@@ -86,6 +87,7 @@ class MessageHandler:
 		return "" # temporary placeholder before I add in more logic. makes sure I always return a string
 
 	def unparsed_response(self):
+		print('unparsed response.')
 		print('idk where this should go. printing message:')
 		print(self._message)
 		 
