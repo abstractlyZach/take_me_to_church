@@ -32,7 +32,9 @@ def respond():
     print("response_str is: " + response_str)
 
     resp = twilio.twiml.Response()
-    resp.sms(messages.HEADER_SEPARATOR + response_str) # separates the trial header from the message
+    # resp.sms(messages.HEADER_SEPARATOR + response_str) # separates the trial header from the message
+    resp.say(messages.HEADER_SEPARATOR + response_str) # separates the trial header from the message
+
 
     return str(resp)
 
