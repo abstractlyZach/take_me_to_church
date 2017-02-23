@@ -15,8 +15,6 @@ DEPARTURE_TIME_MESSAGE = "Are you down to leave at the usual time ({})? " + \
 	"If not, when do you want to leave?"
 DEPARTURE_TIME_MESSAGE = DEPARTURE_TIME_MESSAGE.format(DEFAULT_DEPARTURE_TIME)
 
-# nltk.download('punkt')
-
 class MessageHandler:
 	def __init__(self, message, session_counter, phone_number):
 		# The message the server just received
