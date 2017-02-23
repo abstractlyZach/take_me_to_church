@@ -1,6 +1,9 @@
 # handle_message.py
 
-import nltk
+# if the server takes more than 15 seconds to respond, Twilio's http request times out
+#     but the server keeps doing its thing.
+# commenting out the nltk import because it might be what's slowing me down
+# import nltk 
 from nltk.tokenize import word_tokenize
 import get_info
 import jokes
