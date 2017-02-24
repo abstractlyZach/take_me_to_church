@@ -1,9 +1,5 @@
 # handle_message.py
 
-# if the server takes more than 15 seconds to respond, Twilio's http request times out
-#     but the server keeps doing its thing.
-# commenting out the nltk import because it might be what's slowing me down
-# import nltk 
 from nltk.tokenize import word_tokenize
 import get_info
 import jokes
@@ -44,10 +40,10 @@ class MessageHandler:
 				return "Got it! Are you down to drive people? (yes/no)"
 			else:
 				if check_rides.person_field_missing(DATE, person.get_name(), 'driver/rider'):
-					print("setting person as a driver!!!")
+					# print("setting person as a driver!!!")
 					check_rides.set_as_driver(DATE, person.get_name())
-					print("finished setting person as a driver!")
-					return "TEST"
+					# print("finished setting person as a driver!")
+					return "Are you down to leave at the usual time ({})? If not, when do you want to leave?".format(DEFAULT_DEPARTURE_TIME)
 				elif check_rides.person_field_missing(DATE, person.get_name(), 'departure time'):
 					check_rides.set_default_departure_time(DATE, person.get_name())
 					return "OK! you'll be leaving at the default time."
